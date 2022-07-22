@@ -1,9 +1,13 @@
-import '../Styles/App.css';
+
+import './../Styles/App.css';
+
 import { Routes, Route } from "react-router-dom";
 import NavButton from "./Components/NavButton";
 import NavDocuments from "./Components/NavDocuments";
 import Base from './Components/Base';
+
 import Header from './Components/Header';
+
 
 function App(props) {
   return (
