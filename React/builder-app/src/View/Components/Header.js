@@ -10,11 +10,13 @@ function Header() {
     return (
      <header>
         <div className='container'> 
-            <img src={logo} alt="Логотип"></img>
-            <input type="text" placeholder='Искать в Группа «ПИК»'/>
-            <button>
-                <img src={search} alt=""></img>
-            </button>
+            <img src={logo} alt="Логотип" className='logo'></img>
+            <div className='search-field'>
+                <input type="text" placeholder='Искать в Группа «ПИК»'/>
+                <button>
+                    <img src={search} alt=""></img>
+                </button>
+            </div>
             <button className='create-button'>
                 <img src={plus} alt=""></img>
                 <p>Создать</p>
@@ -24,7 +26,7 @@ function Header() {
             </button>
             <div className='user'>
                 <p>Здравствуйте, Виктор</p>
-                <img src={avatar} alt=""></img>
+                <img src={avatar} alt="" id='avatar'></img>
                 <img src={arrowBottom} alt=""></img>
             </div>
         </div>
