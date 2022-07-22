@@ -3,18 +3,20 @@ import ReactDOM from "react-dom/client";
 import {
   BrowserRouter
 } from "react-router-dom";
-
 import './Styles/Base.css';
-
+import Splash from './View/Slpash'
 import App from './View/App';
 import reportWebVitals from './reportWebVitals';
-import data from './Model/DataApp';
+import { Routes, Route } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App data={data}/>
+    <Routes>
+        <Route path="/" element={<Splash/>}/>
+        <Route path="/main" element={<App/>} />
+    </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
