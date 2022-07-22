@@ -9,4 +9,15 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('json')
+  getJson() {
+    console.log('johnsons');
+    return {
+      id: 1,
+      title: "Johnsons",
+      algorithm: "Baby",
+      isTrue: true,
+    }
+  }
 }
