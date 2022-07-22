@@ -1,0 +1,57 @@
+.top-menu {
+    box-sizing: border-box;
+    padding: 25px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    height: 67px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.top-menu .task-name {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 55px;
+}
+
+.top-menu .task-name .task-avatar {
+    box-sizing: border-box;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    background-color: #DEC95D;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    padding-top: 8px;
+    margin-right: 12px;
+}
+
+.top-menu ul {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu li {
+    margin-right: 26px;
+}
+
+.top-menu ul button {
+    height: 56px;
+    background-color: transparent;
+    border: none;
+    font-family: "Golos";
+    font-size: 14px;
+    font-weight: 500;
+    color: #9B9DA6;
+}
+
+.top-menu .active button {
+    color: black;
+    border-bottom: 2px solid black;
+}

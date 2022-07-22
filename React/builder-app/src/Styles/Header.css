@@ -1,5 +1,6 @@
 header {
     background-color: #FFFFFF;
+    border-bottom: 1px solid #EEEEEE;
 }
 
 header .container {
@@ -29,6 +30,11 @@ header .search-field input {
     border: 1px solid #EEEEEE;
     border-radius: 18px;
     padding-left: 44px;
+    font-size: 12px;
+}
+
+header .search-field input:active { 
+    border: 1px solid #FFFFFF;
 }
 
 header .search-field button {
@@ -47,7 +53,7 @@ header .create-button {
     position: relative;
     width: 104px;
     height: 28px;
-    background-color: #5DC7E9;
+    background-color: #373B4E;
     border: none;
     border-radius: 14px;
     color: white;

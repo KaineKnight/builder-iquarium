@@ -21,6 +21,13 @@ table{border-collapse:collapse;border-spacing:0}
     font-weight: 500; 
 }
 
+@font-face {
+    font-family: "Golos"; 
+    src: url("./Fonts/Golos-Text_DemiBold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: 600; 
+}
+
 .container {
     width: 1366px;
     margin: 0 auto;
@@ -30,5 +37,5 @@ body {
     background-color: #F9F8F8;
     font-family: "Golos";
     font-weight: 400;
-	font-size: 20px;
+	font-size: 14px;
 }
