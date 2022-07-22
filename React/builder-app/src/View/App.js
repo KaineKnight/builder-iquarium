@@ -1,8 +1,8 @@
-import './App.css';
+import './../Styles/App.css';
 import { Routes, Route } from "react-router-dom";
-import NavButton from "./View/Components/NavButton";
-import NavDocuments from "./View/Components/NavDocuments";
-import Base from './View/Components/Base';
+import NavButton from "./Components/NavButton";
+import NavDocuments from "./Components/NavDocuments";
+import Base from './Components/Base';
 
 function App(props) {
   return (
