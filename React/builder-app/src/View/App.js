@@ -15,6 +15,7 @@ function App(props) {
           <Tasks/>
         </div>
       </div>
+      <footer className="foo"><p className="fooText">© 2022 builger.com. Все права защищены.</p></footer>
     </div>
   );
 }

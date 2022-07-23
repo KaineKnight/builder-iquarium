@@ -109,3 +109,22 @@ header .user p::before {
 header .user img:not(:last-of-type) {
     margin-right: 15px;
 } 
+
+.foo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    background-color:#FFFFFF;
+    border-top: 1px solid #EEEEEE;
+}
+
+
+.fooText{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Golos";
+    line-height: 14px;
+    color: #A0A0A0;
+}

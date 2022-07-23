@@ -46,6 +46,7 @@
     font-size: 24px;
     font-weight: 400;
     font-family: "Golos";
+    margin-bottom: 35px;
 }
 
 .iButton{
@@ -72,7 +73,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 35px;
     height: 45px;
     background-color:#FFFFFF;
 }
