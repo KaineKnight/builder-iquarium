@@ -10,7 +10,4 @@ export class CreateEpochDto {
   @IsNotEmpty()
   endPlanDate: Date;
 
-  @IsNotEmpty()
-  projectId: number;
-
 }

@@ -18,12 +18,12 @@ export class CommentEntity extends BaseEntity {
   @Column({unique: false, nullable: false})
   text: string;
 
-  @Column({unique: false, nullable: false})
+  @Column({unique: false, nullable: false, default: false})
   isSolved: boolean;
 
   //one comment to one user
-  @OneToOne(() => UserEntity)
-  @JoinColumn()
+  @ManyToOne(() => UserEntity, user => user.comments)
   user: UserEntity;
+
 
 }

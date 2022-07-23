@@ -17,10 +17,4 @@ export class CreateTaskDto {
   @IsOptional()
   status: number;
 
-  @IsNotEmpty()
-  epochId: number;
-
-  @IsNotEmpty()
-  teamId: number;
-
 }

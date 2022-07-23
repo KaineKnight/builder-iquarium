@@ -45,6 +45,14 @@ export class EpochsController {
     return await this.epochsService.getEpochById(id);
   }
 
+  @Get('/search/:title')
+  @HttpCode(HttpStatus.OK)
+  async search(
+    @Param('title') title: string,
+  ) {
+    return await this.epochsService.search(title);
+  }
+
   @Post('createEpochByProjectID/:id')
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)
@@ -55,13 +63,14 @@ export class EpochsController {
     return await this.epochsService.createEpochByProjectId(id, createEpochDto);
   }
 
-  @Post('id/:id/update')
+  @Post('epochId/:epochId/projectId/:projectId/update')
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)
   async updateEpoch(
     @Body() updateEpochDto: UpdateEpochDto,
-    @Param('id', ParseIntPipe) epochId: number,
+    @Param('epochId', ParseIntPipe) epochId: number,
+    @Param('projectId', ParseIntPipe) projectId: number,
   ) {
-    return await this.epochsService.updateEpoch(updateEpochDto.projectId, epochId, updateEpochDto);
+    return await this.epochsService.updateEpoch(projectId, epochId, updateEpochDto);
   }
 }

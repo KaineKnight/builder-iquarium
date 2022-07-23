@@ -25,6 +25,13 @@ export class EpochsService {
       .getMany();
   }
 
+  async search(title: string) {
+    return await this.projectsRepository.manager.query('' +
+      'SELECT *\n' +
+      'FROM projects\n' +
+      'WHERE title ~*' + ` \'${title}\'` );
+  }
+
   async getEpochsByProjectId(pageOptionsDto: PageOptionsDto, id: number) {
     const queryBuilder = this.epochsRepository.createQueryBuilder("epochs");
     queryBuilder
@@ -72,8 +79,9 @@ export class EpochsService {
   async updateEpoch(projectId: number, epochId: number, updateEpochDto) {
     const project = await this.projectsRepository.findOneById(projectId);
     if(project == null) throw new HttpException("no such project", HttpStatus.BAD_REQUEST);
-    const epoch: EpochEntity = await this.epochsRepository.findOneById(epochId);
+    let epoch: EpochEntity = await this.epochsRepository.findOneById(epochId);
     if(epoch == null) throw new HttpException("no such epoch", HttpStatus.BAD_REQUEST);
+    epoch = updateEpochDto;
     const epochs: EpochEntity[] = await this.epochsRepository.manager.query('' +
       'SELECT "epochs"."id" AS "id", "epochs"."title" AS "title", \n' +
       '"epochs"."startPlanDate" AS "startPlanDate", \n' +

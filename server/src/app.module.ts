@@ -12,6 +12,7 @@ import { EpochsModule } from './epochs/epochs.module';
 import { DocumentsModule } from './documents/documents.module';
 import { TeamsModule } from './teams/teams.module';
 import { CommentsModule } from './comments/comments.module';
+import { TagsModule } from './tags/tags.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { CommentsModule } from './comments/comments.module';
     DocumentsModule,
     TeamsModule,
     CommentsModule,
+    TagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

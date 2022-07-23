@@ -40,6 +40,14 @@ export class ProjectsController {
     return await this.projectsService.getProjectById(id);
   }
 
+  @Get('/search/:title')
+  @HttpCode(HttpStatus.OK)
+  async search(
+    @Param('title') title: string,
+  ) {
+    return await this.projectsService.search(title);
+  }
+
   @Post('createProject')
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)

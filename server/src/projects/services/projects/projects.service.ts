@@ -42,6 +42,13 @@ export class ProjectsService {
       .getMany();
   }
 
+  async search(title: string) {
+    return await this.projectsRepository.manager.query('' +
+      'SELECT *\n' +
+      'FROM projects\n' +
+      'WHERE title ~*' + ` \'${title}\'` );
+  }
+
   async createProject(createProjectDto) {
     console.log('createProj');
     return await this.projectsRepository.save(createProjectDto);

@@ -47,6 +47,14 @@ export class TasksController {
     return await this.tasksService.getTaskById(id);
   }
 
+  @Get('/search/:title')
+  @HttpCode(HttpStatus.OK)
+  async search(
+    @Param('title') title: string,
+  ) {
+    return await this.tasksService.search(title);
+  }
+
   @Post('createTaskByEpochId/:id')
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)
@@ -57,14 +65,15 @@ export class TasksController {
     return await this.tasksService.createTaskByEpochId(id, createTaskDto);
   }
 
-  @Post('id/:id/update')
+  @Post('taskId/:taskId/epochId/:epochId/update')
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)
   async updateTask(
     @Body() updateTaskDto: UpdateTaskDto,
     @Param('id', ParseIntPipe) taskId: number,
+    @Param('epochId', ParseIntPipe) epochId: number,
   ) {
-    return await this.tasksService.updateTask(updateTaskDto.epochId, taskId, updateTaskDto);
+    return await this.tasksService.updateTask(epochId, taskId, updateTaskDto);
   }
 
 }

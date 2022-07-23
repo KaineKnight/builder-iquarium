@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { CommentEntity, EpochEntity, TaskEntity } from "../../../entities";
+import { CommentEntity, EpochEntity, TagEntity, TaskEntity } from "../../../entities";
 import { Repository } from "typeorm";
 import { PageOptionsDto } from "../../../utils/pagination/dto/pageOptions.dto";
 import { PageDto } from "../../../utils/pagination/dto/page.dto";
@@ -15,10 +15,19 @@ export class TasksService {
     @InjectRepository(EpochEntity) private readonly epochRepository: Repository<EpochEntity>,
     @InjectRepository(TaskEntity) private readonly taskRepository: Repository<TaskEntity>,
     @InjectRepository(CommentEntity) private readonly commentRepository: Repository<CommentEntity>,
-    ) {
+    @InjectRepository(TagEntity) private readonly tagRepository: Repository<TagEntity>,
+
+  ) {
   }
 
   async getTasksByEpoch(id: number) {
+    return await this.taskRepository.manager.query('' +
+      'select * from tasks\n' +
+      'left join tags on tasks."tagId"=tags.id\n' +
+      'where tasks."epochId" = ' + `${id}`)
+
+
+
     return await this.epochRepository
       .createQueryBuilder('epoch')
       .leftJoinAndSelect("epoch.tasks", "tasks")
@@ -45,6 +54,13 @@ export class TasksService {
       .leftJoinAndSelect("task.comments", "comments")
       .where("task.id = :id", {id: id})
       .getMany();
+  }
+
+  async search(title: string) {
+    return await this.taskRepository.manager.query('' +
+      'SELECT *\n' +
+      'FROM projects\n' +
+      'WHERE title ~*' + ` \'${title}\'` );
   }
 
   async createTaskByEpochId(id: number, createTaskDto: CreateTaskDto) {
@@ -89,12 +105,6 @@ export class TasksService {
     }
     epoch.addTask(task);
     await this.epochRepository.save(epoch);
-    return await this.taskRepository.update({id: taskId},
-      {
-        title: updateTaskDto.title,
-        startPlanDate: updateTaskDto.startPlanDate,
-        duration: updateTaskDto.duration,
-        status: updateTaskDto.status
-      })
+    return await this.taskRepository.update({id: taskId}, updateTaskDto)
   }
 }

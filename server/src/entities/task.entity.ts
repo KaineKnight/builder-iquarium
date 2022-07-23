@@ -3,6 +3,7 @@ import { EpochEntity } from "./epoch.entity";
 import { TeamEntity } from "./team.entity";
 import { CommentEntity } from "./comment.entity";
 import { DocumentEntity } from "./document.entity";
+import { TagEntity } from "./tag.entity";
 
 @Entity({name: 'tasks'})
 export class TaskEntity extends BaseEntity {
@@ -22,6 +23,10 @@ export class TaskEntity extends BaseEntity {
     () => TeamEntity, team => team.tasks
   )
   team: TeamEntity;
+
+  //many tasks on one tag
+  @ManyToOne(() => TagEntity, tag => tag.tasks)
+  tag: TagEntity;
 
   //one task to many documents
   @OneToMany(
@@ -51,7 +56,7 @@ export class TaskEntity extends BaseEntity {
   )
   comments: CommentEntity[];
 
-  addComments(comment: CommentEntity) {
+  addComment(comment: CommentEntity) {
     if(this.comments == null) {
       this.comments = new Array<CommentEntity>();
       //console.log('null ev');
@@ -60,7 +65,7 @@ export class TaskEntity extends BaseEntity {
     //console.log(this.events);
   }
 
-  addTasks(comment: CommentEntity[]) {
+  addComments(comment: CommentEntity[]) {
     if(this.comments == null) {
       this.comments = new Array<CommentEntity>();
       //console.log('null ev');
