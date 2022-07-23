@@ -49,6 +49,10 @@
 }
 
 .iButton{
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Golos";
+    line-height: 28px;
     margin-top: 5px;
     margin-right: 4px;
 }
@@ -73,6 +77,11 @@
     background-color:#FFFFFF;
 }
 
+
 .fooText{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Golos";
+    line-height: 14px;
     color: #A0A0A0;
 }
