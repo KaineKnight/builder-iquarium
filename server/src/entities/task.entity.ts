@@ -50,6 +50,9 @@ export class TaskEntity extends BaseEntity {
   @Column({unique: false, nullable: false, default: 0})
   status: number; // 0-task, 1-inProgress, 2-readyForQA, 3-finished
 
+  @Column({unique: false, nullable: false, default: 0})
+  isFinished: boolean;
+
   //one task to many comments
   @OneToMany(
     () => CommentEntity, comment => comment.task

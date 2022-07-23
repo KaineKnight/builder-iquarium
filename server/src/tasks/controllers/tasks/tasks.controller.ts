@@ -34,7 +34,7 @@ export class TasksController {
   @HttpCode(HttpStatus.OK)
   async getTasksByEpochId(
     @Query() pageOptionsDto: PageOptionsDto,
-    @Param('epochId', ParseIntPipe) id: number,
+    @Param('id', ParseIntPipe) id: number,
   ) {
     return await this.tasksService.getTasksByEpochId(pageOptionsDto, id);
   }

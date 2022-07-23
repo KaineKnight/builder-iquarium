@@ -18,6 +18,9 @@ export class UpdateTaskDto {
   epochId: number;
 
   @IsOptional()
-  teamId: number;
+  teamId: number
+
+  @IsOptional()
+  isFinished: boolean;
 
 }

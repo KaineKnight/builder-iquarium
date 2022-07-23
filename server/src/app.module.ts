@@ -13,6 +13,7 @@ import { DocumentsModule } from './documents/documents.module';
 import { TeamsModule } from './teams/teams.module';
 import { CommentsModule } from './comments/comments.module';
 import { TagsModule } from './tags/tags.module';
+import { ItemsModule } from './items/items.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { TagsModule } from './tags/tags.module';
     TeamsModule,
     CommentsModule,
     TagsModule,
+    ItemsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

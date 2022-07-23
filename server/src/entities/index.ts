@@ -7,17 +7,18 @@ import { UserEntity } from "./user.entity";
 import { CommentEntity } from "./comment.entity";
 import { DocumentEntity } from "./document.entity";
 import { TagEntity } from "./tag.entity";
+import { ItemEntity } from "./item.entity";
 
 const entities = [
   EpochEntity, ProjectEntity, RoleEntity,
   TaskEntity, TeamEntity, UserEntity, CommentEntity,
-  DocumentEntity, TagEntity,
+  DocumentEntity, TagEntity, ItemEntity,
 ];
 
 export {
   EpochEntity, ProjectEntity, RoleEntity,
   TaskEntity, TeamEntity, UserEntity, CommentEntity,
-  DocumentEntity, TagEntity,
+  DocumentEntity, TagEntity, ItemEntity
 };
 
 export default entities;
