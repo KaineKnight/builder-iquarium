@@ -1,7 +1,7 @@
 .main {
     display: grid;
     grid-template-columns: auto 194px 1232px auto;
-    grid-template-rows: 67px calc(100vh - (67px + 60px));
+    grid-template-rows: 67px auto;
     grid-template-areas: 
         "side side topm topm"
         "side side cont cont";

@@ -1,5 +1,9 @@
 .side-menu {
     background-color: white;
     border-right: 1px solid #EEEEEE;
-    
-}
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+} 
+

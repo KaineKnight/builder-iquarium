@@ -14,7 +14,6 @@ function App(props) {
         <div className='content'>
           <Tasks/>
         </div>
-        
       </div>
     </div>
   );
