@@ -3,10 +3,6 @@ import light from '../../Styles/Images/Tasks/lightning-icon.svg';
 import clock from '../../Styles/Images/Tasks/clock-icon.svg';
 import brock from '../../Styles/Images/Tasks/brock-icon.svg';
 import exclaim from '../../Styles/Images/Tasks/exclaim-icon.svg';
-
-function Tasks(props) {
-
-
 import union from '../../Styles/Images/Tasks/union-icon.svg';
 import TaskCard from './TaskCard';
 import exclaim2 from '../../Styles/Images/PopUp/status2-icon.svg';
@@ -34,6 +30,7 @@ function Tasks() {
       
         
     }
+
     return (
         <div className='tasks'>
             <div className='sort'>
