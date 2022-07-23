@@ -60,6 +60,7 @@ header .create-button {
     color: white;
     padding-left: 32px;
     margin-right: 27px;
+    z-index: 10;
 }
 
 header .create-button .form {
