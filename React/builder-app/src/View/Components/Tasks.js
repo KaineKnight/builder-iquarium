@@ -15,9 +15,34 @@ import task from '../../Styles/Images/PopUp/files-icon.svg';
 import message from '../../Styles/Images/PopUp/com1-icon.svg';
 import anotherClip from '../../Styles/Images/PopUp/interface-icon.svg';
 import trashCan from '../../Styles/Images/PopUp/can-icon.svg';
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Tasks() {
+
+    const [appState, setAppState] = useState(null);
+
+    
+    let arr0 = [];
+    let arr1 = [];
+    let arr2 = [];
+
+    const NewButtonTask = async () => { 
+        await axios.get("http://10.1.1.40:3000/tasks/epochID/2").then((resp) => {
+            setAppState(resp.data)
+     });
+   }
+
+    useEffect( () =>  {
+         NewButtonTask()
+    }, []);
+
+    if (!appState) return null;
+
+    let taskCard0 = appState.map( d => d.status===0 && <TaskCard data={d}/>)
+    let taskCard1 = appState.map( d => d.status===1 && <TaskCard data={d}/>)
+    let taskCard2 = appState.map( d => d.status===2 && <TaskCard data={d}/>)
+
 
     function closePopUp() {
         let popUp = document.querySelector(".pop-up");
@@ -66,27 +91,21 @@ function Tasks() {
                 <li className='section'>
                     <h2>Выполнить</h2>
                     <ul className='section-items'>
-                    <TaskCard />
-                    <TaskCard />
-                    <TaskCard />
+                    {taskCard0}
                     </ul>
                 </li>
                 <li className='line'></li>
                 <li className='section'>
                     <h2>В процессе</h2>
                     <ul className='section-items'>
-                    <TaskCard />
-                    <TaskCard />
-                    <TaskCard />
+                    {taskCard1}
                     </ul>
                 </li>
                 <li className='line'></li>
                 <li className='section'>
                     <h2>Завершено</h2>
                     <ul className='section-items'>
-                    <TaskCard />
-                    <TaskCard />
-                    <TaskCard />
+                    {taskCard2}
                     </ul>
                 </li>
                 <li className='line'></li>

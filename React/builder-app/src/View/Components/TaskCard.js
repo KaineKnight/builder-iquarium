@@ -11,11 +11,22 @@ function TaskCard(props) {
         let popUp = document.querySelector(".pop-up");
         popUp.classList.remove('hidden');
     }
+
+    function DateFormatter(date){
+        let year, month, day
+        year = date.slice(0, 4);
+        month = date.slice(5, 7);
+        day = date.slice(8, 10);
+        return day + '.' + month + '.' + year;
+
+    }
+
+
     return (
       <div className="card">
         <div className="card_margin">
             <div className="title">
-                <p className="title_text">Внутренняя отделка</p>
+                <p className="title_text">{props.data.title}</p>
                 <p className="pro">0%</p>
             </div>
 
@@ -31,7 +42,7 @@ function TaskCard(props) {
                     <button className="photo"><img  src={Man}/></button>
                     <button className="photo"><img  className="dolboeb" src={Chel}/></button> 
                 </div>
-                <p className="data">06.12.2021</p>
+                <p className="data">{DateFormatter(props.data.endPlanDate)}</p>
             </div>
         </div>
       </div>

@@ -1,10 +1,8 @@
 
 let TaskData= {
-    dataTask:[],
-    root:"",
-    init_data(newData){
-        this.dataTask = newData 
-    }
+    dataTask0:[],
+    dataTask1:[],
+    dataTask2:[]
 };
 
 
