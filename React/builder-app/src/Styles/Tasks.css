@@ -1,0 +1,110 @@
+.tasks {
+    padding-left: 24px;
+    padding-top: 29px;
+}
+
+.tasks .sort {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tasks .sort p {
+    margin-right: 32px;
+}
+
+.tasks .sort button {
+    background-color: transparent;
+    border: none;
+    font-family: "Golos";
+    font-size: 12px;
+    margin-right: 20px;
+    color: #9B9DA6;
+}
+
+.tasks .sort button.active {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.tasks .sort button.active::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    margin-left: 13px;
+    margin-bottom: 3px;
+    border-bottom-color: black;
+}
+
+.tasks .tags {
+    display: flex;
+    margin-bottom: 36px;
+}
+
+.tasks .tags li {
+    position: relative;
+    margin-right: 6px;
+}
+
+.tasks .tags button {
+    height: 30px;
+    border: none;
+    padding-left: 24px;
+    padding-right: 10px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Golos';
+    font-weight: 500;
+}
+
+.tasks .tags .fast {
+    background-color: #972EEA;
+}
+
+.tasks .tags .late {
+    background-color: #E54444;
+}
+
+.tasks .tags .later {
+    background-color: #E5C244;
+}
+
+.tasks .tags .difficult {
+    background-color: #4498E5;
+}
+
+.tasks .tags img {
+    position: absolute;
+    left: 8px;
+    top: 9px;
+}
+
+.tasks .tags .light {
+    left: 12px;
+}
+
+.tasks .section-list {
+    display: flex;
+    width: 975px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tasks .section-list .section {
+    width: 249px;
+}
+
+.tasks .section-list .section h2 {
+    font-family: 'Golos';
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.tasks .section-list .line {
+    width: 1px;
+    height: 541px;
+    background-color: #EEEEEE;
+}
