@@ -14,21 +14,28 @@ import Chel from "./../../Styles/Images/Compopents/chel.svg";
 import task from '../../Styles/Images/PopUp/files-icon.svg';
 import message from '../../Styles/Images/PopUp/com1-icon.svg';
 import anotherClip from '../../Styles/Images/PopUp/interface-icon.svg';
+import trashCan from '../../Styles/Images/PopUp/can-icon.svg';
 
 
 function Tasks() {
+
     function closePopUp() {
         let popUp = document.querySelector(".pop-up");
         popUp.classList.add('hidden');
     }
-    function openDisplay(displayName) {
-        let displays = document.querySelectorAll(".displays div");
-        
-        for (var i = 0; i < displays.length; i++) {
-            displays[i].classList.add("hidden");
-        }
-      
-        
+
+    let handleClick = (activeName, activeButton) => {
+        let newActive = document.querySelector(activeName);
+        let buttons = document.querySelectorAll('.menu button');
+        let displays = document.querySelectorAll(".displays > div");
+        buttons.forEach((button) => {
+            button.classList.remove("active");
+        })
+        displays.forEach((display) => {
+            display.classList.remove("active");
+        })
+        newActive.classList.add("active");
+        buttons[activeButton].classList.add('active');
     }
     return (
         <div className='tasks'>
@@ -123,15 +130,15 @@ function Tasks() {
                             </div>
                         </div>
                         <div className='menu'>
-                            <button className='active' onClick={openDisplay(1)}>
+                            <button className='active' onClick={(e) => handleClick(".small-tasks", 0)}>
                                 <img src={task}></img>
                                 <p>Подзадачи</p>
                             </button>
-                            <button onClick={openDisplay(1)}>
+                            <button onClick={(e) => handleClick(".files", 1)}>
                                 <img src={anotherClip}></img>
                                 <p>Файлы</p>
                             </button>
-                            <button onClick={openDisplay(1)}>
+                            <button onClick={(e) => handleClick(".comments", 2)}>
                                 <img src={message}></img>
                                 <p>Комментарии</p>
                             </button>
@@ -157,7 +164,42 @@ function Tasks() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='files'></div>
+                            <div className='files'>
+                                <table>
+                                    <tr className='tip'>
+                                        <td>№</td>
+                                        <td>Название файла</td>
+                                        <td>Файл</td>
+                                        <td>Прикрепил</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Акт о завершении работы</td>
+                                        <td><a href='#'>Акт_подтверждения_работы.docx</a></td>
+                                        <td>Курыс В.Р.</td>
+                                        <td><button className='deleteBtn'><img src={trashCan}></img></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Акт о завершении работы</td>
+                                        <td><a href='#'>Акт_подтверждения_работы.docx</a></td>
+                                        <td>Курыс В.Р.</td>
+                                        <td><button className='deleteBtn'><img src={trashCan}></img></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Акт о завершении работы</td>
+                                        <td><a href='#'>Акт_подтверждения_работы.docx</a></td>
+                                        <td>Курыс В.Р.</td>
+                                        <td><button className='deleteBtn'><img src={trashCan}></img></button></td>
+                                    </tr>
+                                </table>
+                                <button className='add'>
+                                    <img src={anotherClip}></img>
+                                    <p>Прикрепить</p>
+                                </button>
+                            </div>
                             <div className='comments'></div>
                         </div>
                     </div>
