@@ -3,6 +3,7 @@ import logo from '../Styles/Images/Header/logo.svg'
 import imgButton from "../Styles/Images/Splash/imgButton.svg"
 import { Link } from "react-router-dom";
 
+
 function Splash(props)  {
     return (
       <div>

@@ -30,7 +30,6 @@ function Tasks() {
       
         
     }
-
     return (
         <div className='tasks'>
             <div className='sort'>
@@ -69,14 +68,18 @@ function Tasks() {
                 <li className='section'>
                     <h2>В процессе</h2>
                     <ul className='section-items'>
-                        
+                    <TaskCard />
+                    <TaskCard />
+                    <TaskCard />
                     </ul>
                 </li>
                 <li className='line'></li>
                 <li className='section'>
                     <h2>Завершено</h2>
                     <ul className='section-items'>
-  
+                    <TaskCard />
+                    <TaskCard />
+                    <TaskCard />
                     </ul>
                 </li>
                 <li className='line'></li>

@@ -1,4 +1,6 @@
 import '../../Styles/TopMenu.css';
+import { Link } from "react-router-dom";
+
 
 function TopMenu() {
     return (
@@ -8,10 +10,10 @@ function TopMenu() {
                 <p>«Azshara Palace»</p>
             </div>
             <ul>
-                <li className='active'><button>Задачи</button></li>
-                <li><button>Хронология</button></li>
-                <li><button>Документация</button></li>
-                <li><button>Статистика</button></li>
+                <li><Link to="*/task">Задачи</Link></li>
+                <li><Link to="*/chrono">Хронология</Link></li>
+                <li><Link to="*/document">Документация</Link></li>
+                <li><Link to="*/statictic">Статистика</Link></li>
             </ul>
         </div>
     );

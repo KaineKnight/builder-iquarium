@@ -1,0 +1,19 @@
+
+.document_container{
+    width: 100%;
+}
+
+
+.description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+}
+
+.nomer{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}

@@ -10,7 +10,6 @@ import reportWebVitals from './reportWebVitals';
 import { Routes, Route } from "react-router-dom";
 import TaskData from './Model/DataApp'
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -18,7 +17,7 @@ root.render(
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Splash/>}/>
-        <Route path="/main" element={<App data={TaskData}/>} />
+        <Route path="/main/*" element={<App data={TaskData}/>} />
     </Routes>
       </BrowserRouter>
   </React.StrictMode>

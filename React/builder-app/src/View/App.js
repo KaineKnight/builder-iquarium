@@ -4,10 +4,12 @@ import TopMenu from './Components/TopMenu';
 import SideMenu from './Components/SideMenu';
 import Tasks from './Components/Tasks';
 import PopUpScript from './Components/PopUpScrit';
+import {  Route,Routes } from "react-router-dom";
+import Document from './Document';
+import Chorono from './Chorono';
+import Statistic from './Statistic';
 
 function App(props) {
-
-
 
   return (
     <div>
@@ -16,7 +18,12 @@ function App(props) {
         <SideMenu data={props.data}/>
         <TopMenu/>
         <div className='content'>
-          <Tasks data={props.data}/>
+          <Routes>
+            <Route path="*/task" element={<Tasks />}/>
+            <Route path="*/chrono" element={<Chorono/>}/>
+            <Route path="*/document" element={<Document/>}/>
+            <Route path="*/statictic" element={<Statistic/>}/>
+          </Routes>
         </div>
       </div>
       <footer className="foo"><p className="fooText">© 2022 builger.com. Все права защищены.</p></footer>
