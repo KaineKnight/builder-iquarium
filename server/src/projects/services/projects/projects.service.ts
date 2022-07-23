@@ -27,6 +27,7 @@ export class ProjectsService {
   }
 
   async getProjectsProjects(pageOptionsDto: PageOptionsDto) {
+    console.log('projectsProjects');
     return await this.projectsRepository
       .createQueryBuilder('project')
       .leftJoinAndSelect("project.epochs", "epochs")

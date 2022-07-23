@@ -2,6 +2,7 @@ import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColum
 import { EpochEntity } from "./epoch.entity";
 import { TeamEntity } from "./team.entity";
 import { CommentEntity } from "./comment.entity";
+import { DocumentEntity } from "./document.entity";
 
 @Entity({name: 'tasks'})
 export class TaskEntity extends BaseEntity {
@@ -22,7 +23,12 @@ export class TaskEntity extends BaseEntity {
   )
   team: TeamEntity;
 
-  //many tasks to many documents
+  //one task to many documents
+  @OneToMany(
+    () => DocumentEntity,
+    document => document.task
+  )
+  documents: DocumentEntity[];
 
   @Column({unique: false, nullable: false})
   title: string;

@@ -1,4 +1,13 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  PrimaryGeneratedColumn
+} from "typeorm";
 import { TaskEntity } from "./task.entity";
 
 @Entity({name: 'documents'})
@@ -8,10 +17,10 @@ export class DocumentEntity extends BaseEntity {
   })
   id: number;
 
-  //many documents to many tasks
-  @ManyToMany(() => TaskEntity)
-  @JoinTable()
-  tasks: TaskEntity[];
+  //many documents to one task
+  @ManyToOne(() => TaskEntity,
+    task => task.documents)
+  task: TaskEntity;
 
   @Column({unique: false, nullable: true})
   title: string;

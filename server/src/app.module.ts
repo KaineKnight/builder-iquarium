@@ -9,6 +9,9 @@ import { AuthModule } from './auth/auth.module';
 import { TasksModule } from './tasks/tasks.module';
 import { ProjectsModule } from './projects/projects.module';
 import { EpochsModule } from './epochs/epochs.module';
+import { DocumentsModule } from './documents/documents.module';
+import { TeamsModule } from './teams/teams.module';
+import { CommentsModule } from './comments/comments.module';
 
 @Module({
   imports: [
@@ -19,6 +22,9 @@ import { EpochsModule } from './epochs/epochs.module';
     TasksModule,
     ProjectsModule,
     EpochsModule,
+    DocumentsModule,
+    TeamsModule,
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
