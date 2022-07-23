@@ -14,6 +14,7 @@ import {
 import { ProjectsService } from "../../services/projects/projects.service";
 import { CreateProjectDto } from "../../dto/CreateProject.dto";
 import { UpdateProjectDto } from "../../dto/UpdateProject.dto";
+import { PageOptionsDto } from "../../../utils/pagination/dto/pageOptions.dto";
 
 @Controller('projects')
 export class ProjectsController {
@@ -22,9 +23,16 @@ export class ProjectsController {
 
   @Get('')
   @HttpCode(HttpStatus.OK)
-  async getProjects(@Query() pageOptionsDto) {
+  async getProjects(@Query() pageOptionsDto: PageOptionsDto) {
     return await this.projectsService.getProjects(pageOptionsDto);
   }
+
+  @Get('projects')
+  @HttpCode(HttpStatus.OK)
+  async getProjectsProjects(@Query() pageOptionsDto: PageOptionsDto) {
+    return await this.projectsService.getProjectsProjects(pageOptionsDto);
+  }
+
 
   @Get('id/:id')
   @HttpCode(HttpStatus.OK)
@@ -36,7 +44,7 @@ export class ProjectsController {
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)
   async createProject(@Body() createProjectDto: CreateProjectDto) {
-    return this.projectsService.createProject(createProjectDto);
+    return await this.projectsService.createProject(createProjectDto);
   }
 
   @Post('id/:id/update')
@@ -46,7 +54,7 @@ export class ProjectsController {
     @Body() updateProjectDto: UpdateProjectDto,
     @Param('id', ParseIntPipe) id: number,
   ) {
-    return this.projectsService.updateProject(id, UpdateProjectDto);
+    return await this.projectsService.updateProject(id, updateProjectDto);
   }
 
 

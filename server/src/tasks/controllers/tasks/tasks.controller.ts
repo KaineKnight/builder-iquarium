@@ -1,16 +1,70 @@
-import { Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  ParseIntPipe,
+  Post,
+  Query,
+  UsePipes,
+  ValidationPipe
+} from "@nestjs/common";
 import { TasksService } from "../../services/tasks/tasks.service";
+import { PageOptionsDto } from "../../../utils/pagination/dto/pageOptions.dto";
+import { CreateTaskDto } from "../../dto/CreateTask.dto";
+import * as Http from "http";
+import { UpdateTaskDto } from "../../dto/UpdateTask.dto";
 
 @Controller('tasks')
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {
   }
 
-  @Get('/projectId/:projectId')
+  @Get('epochID/:id')
   @HttpCode(HttpStatus.OK)
-  async getTasksByProjectId(
-    @Param('projectId', ParseIntPipe) projectId: number,
+  async getTasksByEpoch(
+    @Param('id', ParseIntPipe) id: number,
   ) {
-
+    return await this.tasksService.getTasksByEpoch(id);
   }
+
+  @Get('/epochID/pagination/:id')
+  @HttpCode(HttpStatus.OK)
+  async getTasksByEpochId(
+    @Query() pageOptionsDto: PageOptionsDto,
+    @Param('epochId', ParseIntPipe) id: number,
+  ) {
+    return await this.tasksService.getTasksByEpochId(pageOptionsDto, id);
+  }
+
+  @Get('id/:id')
+  @HttpCode(HttpStatus.OK)
+  async getTaskById(
+    @Param('id', ParseIntPipe) id: number,
+  ) {
+    return await this.tasksService.getTaskById(id);
+  }
+
+  @Post('createTaskByEpochId/:id')
+  @HttpCode(HttpStatus.OK)
+  @UsePipes(ValidationPipe)
+  async createTaskByEpochId(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() createTaskDto: CreateTaskDto,
+  ) {
+    return await this.tasksService.createTaskByEpochId(id, createTaskDto);
+  }
+
+  @Post('id/:id/update')
+  @HttpCode(HttpStatus.OK)
+  @UsePipes(ValidationPipe)
+  async updateTask(
+    @Body() updateTaskDto: UpdateTaskDto,
+    @Param('id', ParseIntPipe) taskId: number,
+  ) {
+    return await this.tasksService.updateTask(updateTaskDto.epochId, taskId, updateTaskDto);
+  }
+
 }

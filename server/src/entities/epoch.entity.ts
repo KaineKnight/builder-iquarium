@@ -32,4 +32,25 @@ export class EpochEntity extends BaseEntity {
   @Column({unique: false, nullable: false})
   endPlanDate: Date;
 
+  addTask(task: TaskEntity) {
+    if(this.tasks == null) {
+      this.tasks = new Array<TaskEntity>();
+      //console.log('null ev');
+    }
+    this.tasks.push(task);
+    //console.log(this.events);
+  }
+
+  addTasks(task: TaskEntity[]) {
+    if(this.tasks == null) {
+      this.tasks = new Array<TaskEntity>();
+      //console.log('null ev');
+    }
+    for(let i = 0; i < task.length; i++) {
+      this.tasks.push(task[i]);
+    }
+    //console.log(this.events);
+  }
+
+
 }

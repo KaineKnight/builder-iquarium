@@ -27,4 +27,24 @@ export class ProjectEntity extends BaseEntity {
 
   @Column({unique: false, nullable: false})
   endPlanDate: Date;
+
+  addEpoch(epoch: EpochEntity) {
+    if(this.epochs == null) {
+      this.epochs = new Array<EpochEntity>();
+      //console.log('null ev');
+    }
+    this.epochs.push(epoch);
+    //console.log(this.events);
+  }
+
+  addEpochs(epoch: EpochEntity[]) {
+    if(this.epochs == null) {
+      this.epochs = new Array<EpochEntity>();
+      //console.log('null ev');
+    }
+    for(let i = 0; i < epoch.length; i++) {
+      this.epochs.push(epoch[i]);
+    }
+    //console.log(this.events);
+  }
 }

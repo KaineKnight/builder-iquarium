@@ -16,7 +16,7 @@ export class TaskEntity extends BaseEntity {
   )
   epoch: EpochEntity;
 
-  //many teams to one team
+  //many tasks to one team
   @ManyToOne(
     () => TeamEntity, team => team.tasks
   )
@@ -31,9 +31,12 @@ export class TaskEntity extends BaseEntity {
   startPlanDate: Date;
 
   @Column({unique: false, nullable: false})
+  endPlanDate: Date;
+
+  @Column({unique: false, nullable: false, default: 0})
   duration: number;
 
-  @Column({unique: false, nullable: false})
+  @Column({unique: false, nullable: false, default: 0})
   status: number; // 0-task, 1-inProgress, 2-readyForQA, 3-finished
 
   //one task to many comments
@@ -41,4 +44,26 @@ export class TaskEntity extends BaseEntity {
     () => CommentEntity, comment => comment.task
   )
   comments: CommentEntity[];
+
+  addComments(comment: CommentEntity) {
+    if(this.comments == null) {
+      this.comments = new Array<CommentEntity>();
+      //console.log('null ev');
+    }
+    this.comments.push(comment);
+    //console.log(this.events);
+  }
+
+  addTasks(comment: CommentEntity[]) {
+    if(this.comments == null) {
+      this.comments = new Array<CommentEntity>();
+      //console.log('null ev');
+    }
+    for(let i = 0; i < comment.length; i++) {
+      this.comments.push(comment[i]);
+    }
+    //console.log(this.events);
+  }
+
+
 }
