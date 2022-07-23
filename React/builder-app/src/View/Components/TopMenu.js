@@ -9,7 +9,7 @@ function TopMenu() {
             </div>
             <ul>
                 <li className='active'><button>Задачи</button></li>
-                <li><button>Расписания</button></li>
+                <li><button>Хронология</button></li>
                 <li><button>Документация</button></li>
                 <li><button>Статистика</button></li>
             </ul>
