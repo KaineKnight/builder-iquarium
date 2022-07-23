@@ -61,6 +61,21 @@ header .create-button {
     margin-right: 27px;
 }
 
+header .create-button .form {
+    display: none;
+    background-color: #373B4E;
+    padding: 10px 15px;
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    bottom: -150px;
+    right: -100px;
+}
+
+header .create-button:hover .form {
+    display: block;
+}
+
 header .create-button img {
     position: absolute;
     top: 8px;
