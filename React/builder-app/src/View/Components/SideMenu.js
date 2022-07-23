@@ -1,7 +1,29 @@
 import '../../Styles/SideMenu.css';
-import arrow from '../../Styles/Images/Header/bottom-arrow-icon.svg';
+import BigProject from './BigProject';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function SideMenu() {
+function SideMenu(props) {
+    let data = props.data;
+
+    const [appState, setAppState] = useState(null);
+
+    const GetAnswer = async () => { 
+         await axios.get("http://10.1.1.40:3000/projects/projects").then((resp) => {
+             setAppState(resp.data);
+      });
+    }
+
+    useEffect( () =>  {
+        GetAnswer()
+    }, []);
+
+
+    if (!appState) return null;
+
+    let bigProject = appState.map( (d) => <BigProject title={d}/>)
+
+   
     return (
         <div className='side-menu'>
             <div className='side-container'>
@@ -10,20 +32,7 @@ function SideMenu() {
                     <button>Все задачи</button>
                 </div>
                 <ul className='group-lists'>
-                    <li>
-                        <p className='group-avatar'><span>П</span>Группа «Пик» <img src={arrow}></img></p>
-                        <ul>
-                            <li> 
-                                <p className='project-avatar'><span>A</span>«Azshara Palace»</p>
-                            </li>
-                            <li>
-                                <p className='project-avatar'><span>D</span>«Dragon Castle»</p>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <p className='group-avatar'><span>П</span>Группа «Пик» <img src={arrow}></img></p>
-                    </li>
+                    {bigProject}
                 </ul>
             </div>
         </div>

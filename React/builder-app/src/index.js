@@ -8,17 +8,17 @@ import Splash from './View/Slpash'
 import App from './View/App';
 import reportWebVitals from './reportWebVitals';
 import { Routes, Route } from "react-router-dom";
-import TaskCard from "./View/Components/TaskCard"
+import ProjectData from './Model/DataApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-  <Routes>
-      <Route path="/" element={<Splash/>}/>
-      <Route path="/main" element={<App/>} />
-  </Routes>
-    </BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Splash/>}/>
+        <Route path="/main" element={<App/>} />
+    </Routes>
+      </BrowserRouter>
   </React.StrictMode>
 );
 

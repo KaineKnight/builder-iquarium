@@ -47,14 +47,16 @@
 
 .side-menu .side-container .group-avatar {
     margin-bottom: 27px;
-    padding: 0 15px;
 }
 
 .side-menu .side-container .group-avatar span {
     background-color: #393939;
     padding: 7px 9px;
     border-radius: 6px;
-    margin-right: 9px;
+}
+
+.hidden{
+    display: none;
 }
 
 .side-menu .side-container .project-avatar {
@@ -74,4 +76,31 @@
 
 .side-menu .group-lists ul li:last-of-type {
     margin-bottom: 27px;
+}
+.group-avatar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spannchik{
+    padding: 0;
+    margin: 0;
+}
+
+.more_button{
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: white;
+    margin-right: 10px;;
+}
+
+.group-avatar{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    font-family: "Golos";
+    margin-left: 10px;;
 }

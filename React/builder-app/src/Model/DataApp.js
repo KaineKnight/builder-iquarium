@@ -1,8 +1,16 @@
-let Data = {
-    id: 0,
-    title: "",
-    algorithm: "",
-    isTrue: false
-}
 
-export default Data;
+let ProjectData = [{
+    title: "",
+    moneyAmount: 0,
+    startPlanDate: "",
+    endPlanDate: "",
+    epochs: [
+        {id: 0,
+        title: "",
+        startPlanDate: "",
+        endPlanDate: "",
+        }
+    ]
+}]
+
+export default ProjectData;
