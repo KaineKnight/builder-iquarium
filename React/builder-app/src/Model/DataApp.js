@@ -1,16 +1,11 @@
 
-let ProjectData = [{
-    title: "",
-    moneyAmount: 0,
-    startPlanDate: "",
-    endPlanDate: "",
-    epochs: [
-        {id: 0,
-        title: "",
-        startPlanDate: "",
-        endPlanDate: "",
-        }
-    ]
-}]
+let TaskData= {
+    dataTask:[],
+    root:"",
+    init_data(newData){
+        this.dataTask = newData 
+    }
+};
 
-export default ProjectData;
+
+export default TaskData;

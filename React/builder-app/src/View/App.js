@@ -5,14 +5,17 @@ import SideMenu from './Components/SideMenu';
 import Tasks from './Components/Tasks';
 
 function App(props) {
+
+
+
   return (
     <div>
       <Header/>
       <div className='main'>
-        <SideMenu/>
+        <SideMenu data={props.data}/>
         <TopMenu/>
         <div className='content'>
-          <Tasks/>
+          <Tasks data={props.data}/>
         </div>
       </div>
       <footer className="foo"><p className="fooText">© 2022 builger.com. Все права защищены.</p></footer>

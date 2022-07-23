@@ -3,9 +3,14 @@ import light from '../../Styles/Images/Tasks/lightning-icon.svg';
 import clock from '../../Styles/Images/Tasks/clock-icon.svg';
 import brock from '../../Styles/Images/Tasks/brock-icon.svg';
 import exclaim from '../../Styles/Images/Tasks/exclaim-icon.svg';
-import TaskCard from './TaskCard';
+import { useState, useEffect } from 'react';
+import DataTask from './../../Model/DataApp'
+import TaskCard from './../../View/Components/TaskCard'
 
-function Tasks() {
+function Tasks(props) {
+
+    //let taskCard = .map( d => <TaskCard />
+        
     return (
         <div className='tasks'>
             <div className='sort'>
@@ -35,27 +40,23 @@ function Tasks() {
                 <li className='section'>
                     <h2>Выполнить</h2>
                     <ul className='section-items'>
-                        <li><TaskCard/></li>
-                        <li><TaskCard/></li>
-                        <li><TaskCard/></li>
+                    <TaskCard />
+                    <TaskCard />
+                    <TaskCard />
                     </ul>
                 </li>
                 <li className='line'></li>
                 <li className='section'>
                     <h2>В процессе</h2>
                     <ul className='section-items'>
-                        <li><TaskCard/></li>
-                        <li><TaskCard/></li>
-                        <li><TaskCard/></li>
+                        
                     </ul>
                 </li>
                 <li className='line'></li>
                 <li className='section'>
                     <h2>Завершено</h2>
                     <ul className='section-items'>
-                        <li><TaskCard/></li>
-                        <li><TaskCard/></li>
-                        <li><TaskCard/></li>
+  
                     </ul>
                 </li>
                 <li className='line'></li>
