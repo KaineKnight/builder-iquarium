@@ -121,15 +121,12 @@ padding: 6px 5px;
 
 .card .active_buton .fast {
     background-color: #972EEA;
+    margin-top: 7px;
 }
 
 .card .active_buton .light {
     position: absolute;
     top: 40px;
     left: 12px;
-}
-
-.fast{
-    margin-top: 10px;
 }
 

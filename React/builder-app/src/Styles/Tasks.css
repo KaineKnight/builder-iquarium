@@ -108,3 +108,7 @@
     height: 541px;
     background-color: #EEEEEE;
 }
+
+.tasks .card {
+    margin-bottom: 16px;
+}
