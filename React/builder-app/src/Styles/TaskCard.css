@@ -8,7 +8,6 @@
 .title{
     display: flex;
     justify-content: space-between;
-    height: 24px;
 }
 
 .card_margin{
@@ -24,6 +23,7 @@
 }
 
 .title_text{
+    width: 167px;
     margin-right: 14px;
     font-size: 14px;
     font-weight: 500;
