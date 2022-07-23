@@ -372,6 +372,15 @@
     background-color: transparent;
     border: none;
     float: right;
+    margin-bottom: 29px;
+}
+
+.tasks .pop-up .files .add::after {
+    content: "";
+    clear: both;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #DDDDDD;
 }
 
 .tasks .pop-up .files .add img {
