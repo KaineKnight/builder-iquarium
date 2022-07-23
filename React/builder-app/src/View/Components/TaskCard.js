@@ -4,7 +4,13 @@ import Light from "./../../Styles/Images/Compopents/light.svg"
 import Man from "./../../Styles/Images/Compopents/microchel.png"
 import Chel from "./../../Styles/Images/Compopents/chel.svg"
 
+
+
 function TaskCard(props) {
+    function showPopUp() {
+        let popUp = document.querySelector(".pop-up");
+        popUp.classList.remove('hidden');
+    }
     return (
       <div className="card">
         <div className="card_margin">
@@ -14,7 +20,7 @@ function TaskCard(props) {
             </div>
 
             <div className="active_buton">
-                <button className="btn_edit"><img src={Edit}/></button> 
+                <button className="btn_edit" onClick={showPopUp}><img src={Edit}/></button> 
                 <button className='fast'>Срочно</button>
                 <img src={Light} alt="Срочно" className='light'></img>
             </div>

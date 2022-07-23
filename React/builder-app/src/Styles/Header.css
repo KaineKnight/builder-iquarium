@@ -1,6 +1,7 @@
 header {
     background-color: #FFFFFF;
     border-bottom: 1px solid #EEEEEE;
+    z-index: 100;
 }
 
 header .container {
@@ -65,15 +66,18 @@ header .create-button .form {
     display: none;
     background-color: #373B4E;
     padding: 10px 15px;
-    width: 100px;
-    height: 150px;
+    width: 170px;
+    height: 200px;
     position: absolute;
-    bottom: -150px;
+    bottom: -220px;
     right: -100px;
 }
 
 header .create-button:hover .form {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .create-button img {
@@ -133,6 +137,7 @@ header .user img:not(:last-of-type) {
     height: 45px;
     background-color:#FFFFFF;
     border-top: 1px solid #EEEEEE;
+    z-index: 100;
 }
 
 

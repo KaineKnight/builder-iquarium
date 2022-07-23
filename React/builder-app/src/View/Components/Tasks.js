@@ -3,14 +3,24 @@ import light from '../../Styles/Images/Tasks/lightning-icon.svg';
 import clock from '../../Styles/Images/Tasks/clock-icon.svg';
 import brock from '../../Styles/Images/Tasks/brock-icon.svg';
 import exclaim from '../../Styles/Images/Tasks/exclaim-icon.svg';
-import { useState, useEffect } from 'react';
-import DataTask from './../../Model/DataApp'
-import TaskCard from './../../View/Components/TaskCard'
 
 function Tasks(props) {
 
-    //let taskCard = .map( d => <TaskCard />
-        
+
+import union from '../../Styles/Images/Tasks/union-icon.svg';
+import TaskCard from './TaskCard';
+import exclaim2 from '../../Styles/Images/PopUp/status2-icon.svg';
+import executor from '../../Styles/Images/PopUp/com2-icon.svg';
+import port from '../../Styles/Images/PopUp/general-icon.svg';
+import clip from '../../Styles/Images/PopUp/status-icon.svg';
+import Man from "./../../Styles/Images/Compopents/microchel.png"
+import Chel from "./../../Styles/Images/Compopents/chel.svg"
+
+function Tasks() {
+    function closePopUp() {
+        let popUp = document.querySelector(".pop-up");
+        popUp.classList.add('hidden');
+    }
     return (
         <div className='tasks'>
             <div className='sort'>
@@ -61,6 +71,49 @@ function Tasks(props) {
                 </li>
                 <li className='line'></li>
             </ul>
+            <div className='pop-up hidden'>
+                <div className='main'>
+                    <div className='pop-up-container'>
+                        <button className='close-btn' onClick={closePopUp}>
+                            <img src={union}></img>
+                        </button>
+                        <div className='title'>
+                            <h2 className='task-name'>«Azshara Palace». Внутренняя отделка</h2>
+                            <span><img src={exclaim2}></img><p>Необходимо провести косметический ремонт в квартирах домового комлекса Азшара. Заменить плиточное покрытие на кухнях, установить кухонный гарнитур. По завершению работы приложить соответствующий акт.</p></span>
+                        </div>
+                        <div className='info'>
+                            <div>
+                                <span>
+                                    <img src={executor} className="icon"></img>
+                                    <p>Исполнители</p>
+                                </span>
+                                <div className="photos">
+                                    <button className="photo"><img  src={Man}/></button> 
+                                    <button className="photo"><img  src={Man}/></button>
+                                    <button className="photo"><img  className="dolboeb" src={Chel}/></button> 
+                                </div>
+                            </div>
+                            <div>
+                                <span>
+                                    <img src={port} className="icon"></img>
+                                    <p>Сроки исполнения</p>
+                                </span>
+                                <p className='date'>До: 06.12.2021 14:00</p>
+                            </div>
+                            <div>
+                                <span>
+                                    <img src={clip} className="icon"></img>
+                                    <p>Теги</p>
+                                </span>
+                                <button className='fast'><img src={light} alt="Срочно" className='light'></img>Срочно</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button className='dark' onClick={closePopUp}>
+                </button>
+            </div>
         </div>
     );
 }
