@@ -10,7 +10,7 @@ export class TagEntity extends BaseEntity {
   id: number;
 
   @Column({unique: false, nullable: true})
-  title: string;
+  colorName: string;
 
   @Column({unique: false, nullable: false})
   color: string;
