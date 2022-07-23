@@ -51,6 +51,10 @@
     color: #9B9DA6;
 }
 
+.top-menu ul button:hover {
+    color: black;
+}
+
 .top-menu .active button {
     color: black;
     border-bottom: 2px solid black;
