@@ -9,13 +9,26 @@ import exclaim2 from '../../Styles/Images/PopUp/status2-icon.svg';
 import executor from '../../Styles/Images/PopUp/com2-icon.svg';
 import port from '../../Styles/Images/PopUp/general-icon.svg';
 import clip from '../../Styles/Images/PopUp/status-icon.svg';
-import Man from "./../../Styles/Images/Compopents/microchel.png"
-import Chel from "./../../Styles/Images/Compopents/chel.svg"
+import Man from "./../../Styles/Images/Compopents/microchel.png";
+import Chel from "./../../Styles/Images/Compopents/chel.svg";
+import task from '../../Styles/Images/PopUp/files-icon.svg';
+import message from '../../Styles/Images/PopUp/com1-icon.svg';
+import anotherClip from '../../Styles/Images/PopUp/interface-icon.svg';
+
 
 function Tasks() {
     function closePopUp() {
         let popUp = document.querySelector(".pop-up");
         popUp.classList.add('hidden');
+    }
+    function openDisplay(displayName) {
+        let displays = document.querySelectorAll(".displays div");
+        
+        for (var i = 0; i < displays.length; i++) {
+            displays[i].classList.add("hidden");
+        }
+      
+        
     }
     return (
         <div className='tasks'>
@@ -108,6 +121,44 @@ function Tasks() {
                                 <button className='fast'><img src={light} alt="Срочно" className='light'></img>Срочно</button>
                                 
                             </div>
+                        </div>
+                        <div className='menu'>
+                            <button className='active' onClick={openDisplay(1)}>
+                                <img src={task}></img>
+                                <p>Подзадачи</p>
+                            </button>
+                            <button onClick={openDisplay(1)}>
+                                <img src={anotherClip}></img>
+                                <p>Файлы</p>
+                            </button>
+                            <button onClick={openDisplay(1)}>
+                                <img src={message}></img>
+                                <p>Комментарии</p>
+                            </button>
+                        </div>
+                        <div className='displays'>
+                            <div className='small-tasks active'>
+                                <ul className='task-list'>
+                                    <li>
+                                        <input type="checkbox" id="1" disabled></input>
+                                        <label for="1">Постелить полы в спальной комнате</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="2" checked disabled></input>
+                                        <label for="2">Установить щеколды на дверях</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="3" checked disabled></input>
+                                        <label for="3">Покрасить стены</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="4" checked disabled></input>
+                                        <label for="4">Укладка плитки</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='files'></div>
+                            <div className='comments'></div>
                         </div>
                     </div>
                 </div>
