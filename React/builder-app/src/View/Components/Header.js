@@ -20,6 +20,13 @@ function Header() {
             <button className='create-button'>
                 <img src={plus} alt=""></img>
                 <p>Создать</p>
+                <div className='form'>
+                    <input type="text"></input>
+                    <input type="text"></input>
+                    <input type="text"></input>
+                    <input type="text"></input>
+                    <input type="submit"></input>
+                </div>
             </button>
             <button className='notify-button'>
                 <img src={bell} alt=""></img>
