@@ -15,10 +15,8 @@ function TaskCard(props) {
 
             <div className="active_buton">
                 <button className="btn_edit"><img src={Edit}/></button> 
-                <li>
-                    <button className='fast'>Срочно</button>
-                    <img src={Light} alt="Срочно" className='light'></img>
-                </li>
+                <button className='fast'>Срочно</button>
+                <img src={Light} alt="Срочно" className='light'></img>
             </div>
 
             <div className="card_footer">
