@@ -1,19 +1,26 @@
-import rowDocument from "./Components/rowDocument";
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import "../Styles/Document.css"
+import "./../Styles/Document.css"
+import Documents from "./Components/rowDocument";
 
 function Document(props) {
 
     const [appState, setAppState] = useState(null);
 
     const NewDocument = async () => { 
-        await axios.get("http://10.1.1.40:3000/tasks/epochID/2").then((resp) => {
+        await axios.get("http://10.1.1.40:3000/documents/documents").then((resp) => {
             setAppState(resp.data)
+            console.log(resp.data)
      });
    }
+    useEffect( () =>  {
+        NewDocument()
+    }, []);
 
-   //let document = appState.map( d => <rowDocument/>)
+    if (!appState) return null;
+
+     let document = appState.map( d => <Documents data={d}/>)
 
     return (
         <div className='document_container'>
@@ -24,7 +31,7 @@ function Document(props) {
                 <div className="file">Файл</div>
                 <div className="status">Статус</div>
             </div>
-            
+            {document}
         </div>
     );
 }
