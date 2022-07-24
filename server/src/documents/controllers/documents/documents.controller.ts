@@ -26,12 +26,12 @@ export class DocumentsController {
 
   }
 
-  @Get('documents')
+  @Get('')
   getAllDocuments() {
     return this.documentsService.getAllDocuments();
   }
 
-  @Get('document/:id')
+  @Get('id/:id')
   @HttpCode(HttpStatus.OK)
   getDocumentById(@Param('id', ParseIntPipe) id: number,
                   @Res() res) {

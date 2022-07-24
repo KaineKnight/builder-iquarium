@@ -38,6 +38,7 @@ export class DocumentsService {
 
   async getDocumentById(id: number, @Res() res) {
     const entity: DocumentEntity = await this.documentsRepository.findOneById(id);
+    console.log(entity);
     if (!entity) return res.send(HttpStatus.NOT_FOUND);
     if (entity.file) return of(res.sendFile(join(process.cwd(), entity.file)));
     else res.send(HttpStatus.NOT_FOUND)
