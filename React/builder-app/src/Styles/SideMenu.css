@@ -58,6 +58,8 @@
 
 .side-menu .side-container .project-avatar {
     padding: 0 19px;
+    text-decoration: none;
+    color: black;
 }
 
 .side-menu .side-container .project-avatar span {
