@@ -1,0 +1,66 @@
+
+
+.statistic-container{
+    background-color: #FFFFFF;
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+
+.statistic-description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.statistic-nomer{
+    width: 62px;
+}
+
+.nomenclatyra{
+    width: 187px;
+}
+
+.work{
+    width:171px;
+}
+
+.count{
+    width:109px;
+}
+
+.measurement{
+    width: 198px;
+}
+
+.price{
+    width:94px;
+}
+
+.money{
+    width:111px;
+}
+
+
+
+
+.statistic-description div{
+    padding-left: 24px;
+    position: relative;
+ }
+
+ .statistic-description div::before{
+    content: "";
+    width: 1px;
+    height: 28px;
+    background-color: #EEEEEE;
+    position: absolute;
+    left:0;
+    top:-6px;
+ }
+
+ .statistic-description div:first-child:before{
+    background-color: transparent;
+ }

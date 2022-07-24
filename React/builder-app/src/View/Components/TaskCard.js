@@ -44,7 +44,7 @@ function TaskCard(props) {
             case 2:
                 return (
                     <div className='bb'>
-                        <img src={brock} alt="Затруднения"></img>
+                        <img src={exclaim} alt="Затруднения"></img>
                         <button className='difficult tag'>Затруднения</button>
                     </div>
                 );
@@ -52,7 +52,7 @@ function TaskCard(props) {
             case 3:
                 return (
                     <div className='bb'>
-                        <img src={exclaim} alt="Срочно" ></img>
+                        <img src={brock} alt="Срочно" ></img>
                         <button className='fast tag'>Срочно</button>
                     </div>
                 );

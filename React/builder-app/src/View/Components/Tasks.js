@@ -17,21 +17,26 @@ import anotherClip from '../../Styles/Images/PopUp/interface-icon.svg';
 import trashCan from '../../Styles/Images/PopUp/can-icon.svg';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {useLocation} from 'react-router-dom'
+import { createContext, useContext } from "react";
 
-function Tasks() {
 
-    const [appState, setAppState] = useState(null);
 
+function Tasks(props) {
+   
+ 
     
-    let arr0 = [];
-    let arr1 = [];
-    let arr2 = [];
+    const [appState, setAppState] = useState(null);
+    
 
-    const NewButtonTask = async () => { 
+
+    const NewButtonTask =  async() => { 
         await axios.get("http://10.1.1.40:3000/tasks/epochID/2").then((resp) => {
             setAppState(resp.data)
+            console.log(appState)
      });
    }
+
 
     useEffect( () =>  {
          NewButtonTask()
@@ -63,7 +68,7 @@ function Tasks() {
         buttons[activeButton].classList.add('active');
     }
     return (
-        <div className='tasks'>
+            <div className='tasks'>
             <div className='sort'>
                 <p>Сортировать по:</p>
                 <button className='active'>срок давности</button>

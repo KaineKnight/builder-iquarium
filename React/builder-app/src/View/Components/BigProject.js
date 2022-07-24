@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function BigPost(props) {
     let isActivit = false
-    let smallPost = props.title.epochs.map( d => <SmallPost data={d}  data1={props.data} isActive={isActivit}/>)
+    let smallPost = props.title.epochs.map( d => <SmallPost data={d}  isActive={isActivit}/>)
 
     const [appState, setState]= useState(null)
     const [count, setCount] = useState(1);

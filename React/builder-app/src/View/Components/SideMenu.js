@@ -21,7 +21,7 @@ function SideMenu(props) {
 
     if (!appState) return null;
 
-    let bigProject = appState.map( (d) => <BigProject title={d} data={data}/>)
+    let bigProject = appState.map( (d) => <BigProject title={d} />)
 
     return (
         <div className='side-menu'>
