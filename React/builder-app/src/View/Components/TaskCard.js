@@ -1,9 +1,11 @@
 import '../../Styles/TaskCard.css';
-import Edit from "./../../Styles/Images/Compopents/edit.svg"
-import Light from "./../../Styles/Images/Compopents/light.svg" 
+import Edit from "./../../Styles/Images/Compopents/edit.svg" 
 import Man from "./../../Styles/Images/Compopents/microchel.png"
 import Chel from "./../../Styles/Images/Compopents/chel.svg"
-
+import light from '../../Styles/Images/Tasks/lightning-icon.svg';
+import clock from '../../Styles/Images/Tasks/clock-icon.svg';
+import brock from '../../Styles/Images/Tasks/brock-icon.svg';
+import exclaim from '../../Styles/Images/Tasks/exclaim-icon.svg';
 
 
 function TaskCard(props) {
@@ -21,6 +23,43 @@ function TaskCard(props) {
 
     }
 
+    function TagGenerator(tagId){
+        switch(tagId){
+            case 0:
+                return (
+                    <div className='bb'>
+                        <img src={clock} alt="Просрочено"></img>
+                        <button className='late tag'>Просрочено</button>
+                    </div>
+                );
+                break;
+            case 1:
+                return (
+                    <div className='bb'>
+                        <img src={light} alt="Срочно" className='light'></img>
+                        <button className='fast tag'>Срочно</button>
+                    </div>
+                );
+                break;
+            case 2:
+                return (
+                    <div className='bb'>
+                        <img src={brock} alt="Затруднения"></img>
+                        <button className='difficult tag'>Затруднения</button>
+                    </div>
+                );
+                break;
+            case 3:
+                return (
+                    <div className='bb'>
+                        <img src={exclaim} alt="Срочно" ></img>
+                        <button className='fast tag'>Срочно</button>
+                    </div>
+                );
+                break;
+
+        }
+    }
 
     return (
       <div className="card">
@@ -32,8 +71,7 @@ function TaskCard(props) {
 
             <div className="active_buton">
                 <button className="btn_edit" onClick={showPopUp}><img src={Edit}/></button> 
-                <button className='fast'>Срочно</button>
-                <img src={Light} alt="Срочно" className='light'></img>
+                {TagGenerator(props.data.tagId)}
             </div>
 
             <div className="card_footer">
