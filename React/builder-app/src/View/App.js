@@ -19,7 +19,7 @@ function App(props) {
         <TopMenu/>
         <div className='content'>
           <Routes>
-            <Route path="*/task" element={<Tasks />}/>
+            <Route path="*/task" element={<Tasks data={props.data}/>}/>
             <Route path="*/chrono" element={<Chorono/>}/>
             <Route path="*/document" element={<Document/>}/>
             <Route path="*/statictic" element={<Statistic/>}/>

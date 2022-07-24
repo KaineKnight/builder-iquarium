@@ -1,8 +1,7 @@
 
 let TaskData= {
-    dataTask0:[],
-    dataTask1:[],
-    dataTask2:[]
+    taskSmallId:0,
+    taskBigId:0
 };
 
 

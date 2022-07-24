@@ -6,12 +6,10 @@ import { Link } from "react-router-dom";
 
 function SmallPost(props) {
 
-    const [appState, setAppState] = useState(null);
-
     return (
       <ul>
         <li>
-            <Link to="*/task" className='project-avatar'><span>{props.data.title[0]}</span>{props.data.title}</Link>
+            <Link to="*/task"  className='project-avatar'><span>{props.data.title[0]}</span>{props.data.title}</Link>
         </li>
       </ul>
     );
