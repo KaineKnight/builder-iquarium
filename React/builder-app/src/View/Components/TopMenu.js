@@ -20,7 +20,7 @@ function TopMenu() {
                 <li className='active' onClick={(e) => handleClick(0)}><Link to="*/task">Задачи</Link></li>
                 <li onClick={(e) => handleClick(1)}><Link to="*/chrono">Хронология</Link></li>
                 <li onClick={(e) => handleClick(2)}><Link to="*/document">Документация</Link></li>
-                <li onClick={(e) => handleClick(3)}><Link to="*/statictic">Статистика</Link></li>
+                <li onClick={(e) => handleClick(3)}><Link to="*/statictic">Затраты</Link></li>
             </ul>
         </div>
     );
