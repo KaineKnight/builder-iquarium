@@ -74,12 +74,12 @@ header .create-button .form {
     right: -100px;
 }
 
-header .create-button:hover .form {
+/* header .create-button:hover .form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 header .create-button img {
     position: absolute;
