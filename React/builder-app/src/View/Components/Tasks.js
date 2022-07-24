@@ -117,7 +117,7 @@ function Tasks() {
                             <h2 className='task-name'>«Azshara Palace». Внутренняя отделка</h2>
                             <span><img src={exclaim2}></img><p>Необходимо провести косметический ремонт в квартирах домового комлекса Азшара. Заменить плиточное покрытие на кухнях, установить кухонный гарнитур. По завершению работы приложить соответствующий акт.</p></span>
                         </div>
-                        *<button className='close-btn' onClick={closePopUp}>
+                        <button className='close-btn' onClick={closePopUp}>
                             <img src={union}></img>
                         </button>
                         <div className='info'>
@@ -181,6 +181,12 @@ function Tasks() {
                                         <input type="checkbox" id="4" checked disabled></input>
                                         <label for="4">Укладка плитки</label>
                                     </li>
+                                    <li class="add-task">
+                                        <button>
+                                            <img src={union}></img>
+                                            <p>Добавить новую подзадачу</p>
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                             <div className='files'>
@@ -221,6 +227,7 @@ function Tasks() {
                             </div>
                             <div className='comments'></div>
                         </div>
+                        <button className='end-button'>Завершить</button>
                     </div>
                 </div>
                 <button className='dark' onClick={closePopUp}>
