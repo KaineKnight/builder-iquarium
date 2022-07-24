@@ -1,0 +1,24 @@
+.check {
+    box-sizing: border-box;
+    width: 229px;
+    height: 82px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 24px;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.check label {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu-chrono .content {
+    position: absolute;
+    top: 144px;
+    left: 200px;
+    z-index: -1;
+}

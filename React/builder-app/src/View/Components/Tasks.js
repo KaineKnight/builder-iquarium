@@ -67,6 +67,15 @@ function Tasks(props) {
         newActive.classList.add("active");
         buttons[activeButton].classList.add('active');
     }
+
+    let tagSort = (activeTag) => {
+        let newActive = document.querySelectorAll('.section-list '+activeTag);
+        let cards = document.querySelectorAll('.section-list .card');
+        console.log(cards);
+        cards.forEach((card) => {
+            card.classList.add("hidden");
+        })
+    }
     return (
             <div className='tasks'>
             <div className='sort'>
@@ -76,18 +85,18 @@ function Tasks(props) {
             </div>
             <ul className='tags'>
                 <li>
-                    <button className='fast'>Срочно</button>
+                    <button onClick={(e) => tagSort} className='fast'>Срочно</button>
                     <img src={light} alt="Срочно" className='light'></img>
                 </li>
-                <li>
+                <li onClick={(e) => tagSort}>
                     <button className='late'>Просрочено</button>
                     <img src={clock} alt="Просрочено"></img>
                 </li>
-                <li>
+                <li onClick={(e) => tagSort}>
                     <button className='later'>Отложено</button>
                     <img src={brock} alt="Просрочено"></img>
                 </li>
-                <li>
+                <li onClick={(e) => tagSort}>
                     <button className='difficult'>Затруднения</button>
                     <img src={exclaim} alt="Затруднения"></img>
                 </li>
