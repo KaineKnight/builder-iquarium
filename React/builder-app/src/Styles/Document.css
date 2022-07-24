@@ -1,0 +1,51 @@
+
+.document_container{
+    background-color: #FFFFFF;
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+
+.description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.nomer{
+    width: 57px;
+    display: flex;
+}
+
+.name_document{
+    width: 299px;
+}
+
+.chel{
+    width:186px;
+}
+
+.file{
+ width:226px;
+}
+
+.description div{
+    padding-left: 24px;
+    position: relative;
+ }
+
+ .description div::before{
+    content: "";
+    width: 1px;
+    height: 28px;
+    background-color: #EEEEEE;
+    position: absolute;
+    left:0;
+    top:-6px;
+ }
+
+ .description div:first-child:before{
+    background-color: transparent;
+ }

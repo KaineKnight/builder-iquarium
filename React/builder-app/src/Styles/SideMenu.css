@@ -1,0 +1,155 @@
+.side-menu {
+    background-color: white;
+    border-right: 1px solid #EEEEEE;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+} 
+
+.side-menu .side-container {
+    width: 194px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-menu .task-types {
+    box-sizing: border-box;
+    padding-left: 28px;
+    width: 194px;
+    height: 110px;
+    border-bottom: 1px solid #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.side-menu .task-types img {
+    margin-right: 12px;
+}
+
+.side-menu .task-types button {
+    background-color: transparent;
+    border: none;
+    font-family: "Golos";
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.side-menu .side-container .group-lists {
+    width: 100%;
+}
+
+.side-menu .side-container span {
+    color: white;
+    font-family: 'Golos';
+    font-weight: 500;
+}
+
+.side-menu .side-container .group-avatar {
+    margin-bottom: 27px;
+}
+
+.side-menu .side-container .group-avatar span {
+    background-color: #393939;
+    padding: 7px 9px;
+    border-radius: 6px;
+}
+
+
+.side-menu .side-container .project-avatar {
+    padding: 0 19px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+}
+
+.side-menu .side-container .project-avatar span {
+    background-color: #DEC95D;
+    padding: 3px 6px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.side-menu .group-lists ul li {
+    margin-bottom: 25px;
+}
+
+.side-menu .group-lists ul li:last-of-type {
+    margin-bottom: 27px;
+}
+.group-avatar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spannchik{
+    padding: 0;
+    margin: 0;
+}
+
+.more_button{
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: white;
+    margin-right: 10px;;
+
+}
+
+.group-avatar{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    font-family: "Golos";
+    margin-left: 10px;
+}
+
+
+.group-lists li ul .side-menu-members{
+    display: none;
+}
+
+.group-lists li ul:last-of-type .side-menu-members{
+    display: block;
+}
+
+.side-menu-members {
+    box-sizing: border-box;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    padding-left: 14px;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    height: 102px;
+    margin-bottom: 30px;
+}
+
+.side-menu-members p {
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    color: #9B9DA6;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.group-lists .section-header {
+    text-transform: uppercase;
+    color: #9B9DA6;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 15px;
+    margin-bottom: 24px;
+}
+
+.truncate {
+    width: 117px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

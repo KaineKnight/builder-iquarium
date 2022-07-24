@@ -1,0 +1,87 @@
+
+.containerSplash{
+    background-color: #F9F8F8;
+    width: 1366px;
+    margin: 0 auto;
+    background: url("./../Styles/Images/Splash/backgroundSplash.png") no-repeat;
+    background-position: right top;
+}
+
+
+.text{
+    font-size: 80px;
+    font-weight: 400;
+    font-family: "Golos";
+    line-height: 88px;
+    margin-top: 20%;
+}
+.body{
+    margin-left: 13px;
+}
+
+.bodyLogo{
+    margin-top: 24px;
+}
+
+.colortext{
+    color: #5DC7E9;
+}
+
+.text1{
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Golos";
+    line-height: 31px;
+    color: #8B8B8B;
+    margin-top: 32px;
+}
+
+.btn{
+    width: 248px;
+    height: 48px;
+    margin-top: 150px;
+    background-color: #393939;
+    border-radius: 14px;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Golos";
+    margin-bottom: 35px;
+}
+
+.iButton{
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Golos";
+    line-height: 28px;
+    margin-top: 5px;
+    margin-right: 4px;
+}
+
+.btn_a{
+    text-decoration: none;
+    margin-left: 4px;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    background-color:#FFFFFF;
+}
+
+
+.fooText{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Golos";
+    line-height: 14px;
+    color: #A0A0A0;
+}

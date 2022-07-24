@@ -1,0 +1,20 @@
+.main {
+    display: grid;
+    grid-template-columns: auto 194px 1232px auto;
+    grid-template-rows: 67px auto;
+    grid-template-areas: 
+        "side side topm topm"
+        "side side cont cont";
+}
+
+.main .side-menu {
+    grid-area: side;
+}
+
+.main .top-menu {
+    grid-area: topm;
+}
+
+.main .content {
+    grid-area: cont;
+}

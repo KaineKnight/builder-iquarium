@@ -1,0 +1,67 @@
+
+
+.statistic-container{
+    background-color: #FFFFFF;
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+    font-size: 12px;
+}
+
+
+.statistic-description{
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.statistic-description td{
+    padding: 20px 0;
+}
+
+.statistic-nomer{
+    width: calc(24px + 62px);
+}
+
+.nomenclatyra{
+    width: calc(24px + 187px);
+}
+
+.work{
+    width:calc(24px + 171px);
+}
+
+.count{
+    width:calc(24px + 109px);
+}
+
+.measurement{
+    width: calc(24px + 198px);
+}
+
+.price{
+    width:calc(24px + 94px);
+}
+
+.money{
+    width:calc(24px + 111px);
+}
+
+
+
+
+.statistic-description td{
+    position: relative;
+    left:24px;
+ }
+
+ .statistic-description td::before{
+    content: "";
+    width: 1px;
+    height: 28px;
+    background-color: #EEEEEE;
+    position: absolute;
+    left:-24px;
+    top:-6px;
+ }
+
+ .statistic-description :first-child:before{
+    background-color: transparent;
+ }
