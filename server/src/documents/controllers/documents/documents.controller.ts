@@ -1,22 +1,22 @@
 import {
+  Body,
   Controller,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Param,
+  Get, HttpCode, HttpStatus,
+  NotFoundException,
+  Param, ParseBoolPipe,
   ParseIntPipe,
-  Post,
+  Post, Res,
   UploadedFile,
-  UseInterceptors
+  UseInterceptors, UsePipes, ValidationPipe
 } from "@nestjs/common";
-import { DocumentsService } from "../../services/documents/documents.service";
-import { FileInterceptor } from "@nestjs/platform-express";
+import {FileInterceptor} from "@nestjs/platform-express";
+import {Express, Request} from "express";
 import {diskStorage} from "multer";
 import * as path from "path";
 import { uuid } from 'uuidv4';
-import {Express, Request} from "express";
-import { join } from 'path';
 import {of} from "rxjs";
+import {join} from "path";
+import { DocumentsService } from "../../services/documents/documents.service";
 
 
 
@@ -33,14 +33,15 @@ export class DocumentsController {
 
   @Get('document/:id')
   @HttpCode(HttpStatus.OK)
-  getDocumentById(@Param('id', ParseIntPipe) id: number) {
-    return this.documentsService.getDocumentById(id);
+  getDocumentById(@Param('id', ParseIntPipe) id: number,
+                  @Res() res) {
+    return this.documentsService.getDocumentById(id, res);
   }
 
-  /*@Post('upload')
+  @Post('taskID/:id/upload')
   @UseInterceptors(FileInterceptor('file', {
     storage: diskStorage({
-      destination: './uploads/requestImages',
+      destination: './uploads/',
       filename: (req: Request, file,  cb) => {
         const filename: string = path.parse(file.originalname).name.replace(/\s/g, '') + uuid();
         const extension: string =  path.parse(file.originalname).ext;
@@ -48,10 +49,12 @@ export class DocumentsController {
         cb(null, `${filename}${extension}`)
       }
     })
-  }))*/
- /* async uploadFile(@UploadedFile() file: Express.Multer.File) {
-    //return await this.documentsService.uploadFile(file);
+  }))
+  async uploadFile(
+    @UploadedFile() file: Express.Multer.File,
+    @Param('id', ParseIntPipe) id: number,) {
+    return await this.documentsService.uploadFile(file, id);
   }
-*/
+
 
 }

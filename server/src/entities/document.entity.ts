@@ -34,4 +34,7 @@ export class DocumentEntity extends BaseEntity {
   @Column({unique: false, nullable: true})
   status: string;
 
+  @CreateDateColumn()
+  createdAt: Date;
+
 }

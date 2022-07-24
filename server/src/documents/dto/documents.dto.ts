@@ -5,7 +5,7 @@ export class DocumentsDto {
   title: string;
 
   @IsNotEmpty()
-  imgPath: string;
+  file: string;
 
   @IsOptional()
   taskId: number;
