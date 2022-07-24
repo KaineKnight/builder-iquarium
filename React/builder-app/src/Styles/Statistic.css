@@ -4,63 +4,64 @@
     background-color: #FFFFFF;
     width: 100%;
     border-bottom: 1px solid #EEEEEE;
+    font-size: 12px;
 }
 
 
 .statistic-description{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 44px;
     border-bottom: 1px solid #EEEEEE;
 }
 
+.statistic-description td{
+    padding: 20px 0;
+}
+
 .statistic-nomer{
-    width: 62px;
+    width: calc(24px + 62px);
 }
 
 .nomenclatyra{
-    width: 187px;
+    width: calc(24px + 187px);
 }
 
 .work{
-    width:171px;
+    width:calc(24px + 171px);
 }
 
 .count{
-    width:109px;
+    width:calc(24px + 109px);
 }
 
 .measurement{
-    width: 198px;
+    width: calc(24px + 198px);
 }
 
 .price{
-    width:94px;
+    width:calc(24px + 94px);
 }
 
 .money{
-    width:111px;
+    width:calc(24px + 111px);
 }
 
 
 
 
-.statistic-description div{
-    padding-left: 24px;
+.statistic-description td{
     position: relative;
+    left:24px;
  }
 
- .statistic-description div::before{
+ .statistic-description td::before{
     content: "";
     width: 1px;
     height: 28px;
     background-color: #EEEEEE;
     position: absolute;
-    left:0;
+    left:-24px;
     top:-6px;
  }
 
- .statistic-description div:first-child:before{
+ .statistic-description :first-child:before{
     background-color: transparent;
  }

@@ -2,6 +2,8 @@ import '../../Styles/SideMenu.css';
 import BigProject from './BigProject';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import allTasks from './../../Styles/Images/Header/all-tasks-icon.svg'
+import myTasks from './../../Styles/Images/Header/my-tasks-icon.svg'
 
 function SideMenu(props) {
     let data = props.data;
@@ -27,10 +29,11 @@ function SideMenu(props) {
         <div className='side-menu'>
             <div className='side-container'>
                 <div className='task-types'>
-                    <button>Мои задачи</button>
-                    <button>Все задачи</button>
+                    <button><img src={allTasks}></img>Все задачи</button>
+                    <button><img src={myTasks}></img>Мои задачи</button>
                 </div>
                 <ul className='group-lists'>
+                    <p className='section-header'>сообщества</p>
                     {bigProject}
                 </ul>
             </div>

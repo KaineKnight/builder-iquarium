@@ -9,7 +9,7 @@ function Statistic() {
     const [appState, setAppState] = useState(null);
 
     const NewStatistic = async () => { 
-        await axios.get("http://10.1.1.40:3000/items/epochId/2").then((resp) => {
+        await axios.get("http://10.1.1.40:3000/items").then((resp) => {
             setAppState(resp.data)
             console.log(appState)
      });
@@ -24,19 +24,19 @@ function Statistic() {
    let statistic = appState.map( d => <Statistics data={d}/>)
 
     return (
-        <div className='statistic-container'>
-            <div className="statistic-description">
-                <div className="statistic-nomer">№</div>
-                <div className="nomenclatyra">Номенклатура</div>
-                <div className="work">Назначение</div>
-                <div className="count">Количество</div>
-                <div className="measurement">Единица измерения</div>
-                <div className="price">Цена</div>
-                <div className="money">Стоимость</div>
-                <div className="chelovek">Получатель</div>
-            </div>
+        <table className='statistic-container'>
+            <tr className="statistic-description">
+                <td className="statistic-nomer">№</td>
+                <td className="nomenclatyra">Номенклатура</td>
+                <td className="work">Назначение</td>
+                <td className="count">Количество</td>
+                <td className="measurement">Единица измерения</td>
+                <td className="price">Цена</td>
+                <td className="money">Стоимость</td>
+                <td className="chelovek">Получатель</td>
+            </tr>
             {statistic}
-        </div>
+        </table>
     );
 }
 

@@ -3,18 +3,16 @@ import "./../../Styles/Statistic.css"
 
 function rowDocument(props) {
     return (
-    <div className='statistic-container'>
-        <div className="statistic-description">
-                <div className="statistic-nomer">{props.data.items[0].id}</div>
-                <div className="nomenclatyra">{props.data.items[0].nomenclature}</div>
-                <div className="work">{props.data.target}</div>
-                <div className="count">{props.data.amount}</div>
-                <div className="measurement">{props.data.measuringType}</div>
-                <div className="price">{props.data.price}</div>
-                <div className="money">{props.data.totalPrice}</div>
-                <div className="chelovek">{props.data.receiver}</div>
-        </div>
-    </div>
+    <tr className="statistic-description">
+                <td className="statistic-nomer">{props.data.id}</td>
+                <td className="nomenclatyra">{props.data.nomenclature}</td>
+                <td className="work">{props.data.target}</td>
+                <td className="count">{props.data.amount}</td>
+                <td className="measurement">{props.data.measuringType}</td>
+                <td className="price">{props.data.price}</td>
+                <td className="money">{props.data.totalPrice}</td>
+                <td className="chelovek">{props.data.receiver}</td>
+    </tr>
     );
 }
 

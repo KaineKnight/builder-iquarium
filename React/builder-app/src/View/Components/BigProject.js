@@ -3,6 +3,8 @@ import SmallPost from './SmallPost';
 import arrowDown from '../../Styles/Images/Header/stickDown.svg';
 import arrowUp from '../../Styles/Images/Header/stickUp.svg'
 import { useState } from 'react';
+import Man from "./../../Styles/Images/Compopents/microchel.png"
+import Chel from "./../../Styles/Images/Compopents/chel.svg"
 
 function BigPost(props) {
     let isActivit = false
@@ -26,7 +28,7 @@ function BigPost(props) {
     return (
       <li>
         <p onClick={ButtonRotate} className='group-avatar'><span className="spannchik">{props.title.title[0]}</span>
-        {props.title.title}
+        <p className='truncate'>{props.title.title}</p>
         <button className={"more_button"}>
             <img  src={ appState ? arrowUp : arrowDown}></img></button></p>
         {appState ?  smallPost : ''}

@@ -27,6 +27,10 @@
     margin-bottom: 30px;
 }
 
+.side-menu .task-types img {
+    margin-right: 12px;
+}
+
 .side-menu .task-types button {
     background-color: transparent;
     border: none;
@@ -60,6 +64,7 @@
     padding: 0 19px;
     text-decoration: none;
     color: black;
+    display: flex;
 }
 
 .side-menu .side-container .project-avatar span {
@@ -103,4 +108,48 @@
     line-height: 14px;
     font-family: "Golos";
     margin-left: 10px;
+}
+
+
+.group-lists li ul .side-menu-members{
+    display: none;
+}
+
+.group-lists li ul:last-of-type .side-menu-members{
+    display: block;
+}
+
+.side-menu-members {
+    box-sizing: border-box;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    padding-left: 14px;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    height: 102px;
+    margin-bottom: 30px;
+}
+
+.side-menu-members p {
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    color: #9B9DA6;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.group-lists .section-header {
+    text-transform: uppercase;
+    color: #9B9DA6;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 15px;
+    margin-bottom: 24px;
+}
+
+.truncate {
+    width: 117px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
