@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { ProjectEntity } from "./project.entity";
+import { EpochEntity } from "./epoch.entity";
 
 @Entity({name:'items'})
 export class ItemEntity extends BaseEntity {
@@ -20,16 +21,16 @@ export class ItemEntity extends BaseEntity {
   @Column({unique: false, nullable: false})
   measuringType: string;
 
-  @Column({unique: false, nullable: false})
+  @Column({unique: false, nullable: false, type: 'double precision'})
   price: number;
 
-  @Column({unique: false, nullable: false})
+  @Column({unique: false, nullable: false, type: 'double precision'})
   totalPrice: number;
 
   @Column({unique: false, nullable: false})
   receiver: string;
 
-  @ManyToOne(() => ProjectEntity,
-      project => project.items)
-  project: ProjectEntity;
+  @ManyToOne(() => EpochEntity,
+      epoch => epoch.items)
+  epoch: EpochEntity;
 }

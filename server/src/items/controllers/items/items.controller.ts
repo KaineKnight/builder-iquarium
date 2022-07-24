@@ -21,7 +21,14 @@ export class ItemsController {
   constructor(private readonly itemsService: ItemsService) {
   }
 
-  @Get('projectID/:id')
+  @Get('')
+  @HttpCode(HttpStatus.OK)
+  async getAllItems() {
+    return await this.itemsService.getAllItems();
+  }
+
+
+  @Get('epochID/:id')
   @HttpCode(HttpStatus.OK)
   async getItemsByProject(
     @Param('id', ParseIntPipe) id: number,
@@ -29,7 +36,7 @@ export class ItemsController {
     return await this.itemsService.getItemsByProject(id);
   }
 
-  @Get('/projectID/pagination/:id')
+  @Get('/epochID/pagination/:id')
   @HttpCode(HttpStatus.OK)
   async getItemsByProjectId(
     @Query() pageOptionsDto: PageOptionsDto,
@@ -50,7 +57,7 @@ export class ItemsController {
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)
   async createTaskByEpochId(
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id', ParseIntPipe) id : number,
     @Body() createItemDto: CreateItemDto,
   ) {
     return await this.itemsService.createItemByProjectId(id, createItemDto);

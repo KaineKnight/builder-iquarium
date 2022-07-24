@@ -19,6 +19,7 @@ import { join } from 'path';
 import {of} from "rxjs";
 
 
+
 @Controller('documents')
 export class DocumentsController {
   constructor(private readonly documentsService: DocumentsService) {
@@ -36,7 +37,7 @@ export class DocumentsController {
     return this.documentsService.getDocumentById(id);
   }
 
-  @Post('upload')
+  /*@Post('upload')
   @UseInterceptors(FileInterceptor('file', {
     storage: diskStorage({
       destination: './uploads/requestImages',
@@ -47,10 +48,10 @@ export class DocumentsController {
         cb(null, `${filename}${extension}`)
       }
     })
-  }))
-  async uploadFile(@UploadedFile() file/*: File*/) {
+  }))*/
+ /* async uploadFile(@UploadedFile() file: Express.Multer.File) {
     //return await this.documentsService.uploadFile(file);
   }
-
+*/
 
 }

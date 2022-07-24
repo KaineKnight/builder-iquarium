@@ -25,10 +25,13 @@ export class DocumentEntity extends BaseEntity {
   @Column({unique: false, nullable: true})
   title: string;
 
-  @Column({unique: false, nullable: false})
-  imgPath: string;
+  @Column({unique: false, nullable: true})
+  sender: string;
 
-  @CreateDateColumn()
-  createdAt: Date;
+  @Column({unique: false, nullable: true})
+  file: string;
+
+  @Column({unique: false, nullable: true})
+  status: string;
 
 }

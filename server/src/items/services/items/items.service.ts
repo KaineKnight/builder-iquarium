@@ -10,23 +10,29 @@ import { CreateItemDto } from "../../dto/CreateItem.dto";
 @Injectable()
 export class ItemsService {
   constructor(
-    @InjectRepository(ProjectEntity) private readonly projectRepository: Repository<ProjectEntity>,
+    @InjectRepository(EpochEntity) private readonly epochRepository: Repository<EpochEntity>,
     @InjectRepository(ItemEntity) private readonly itemRepository: Repository<ItemEntity>,
   ) {
   }
 
+  async getAllItems() {
+    return await this.itemRepository
+      .createQueryBuilder('item')
+      .getMany();
+  }
+
   async getItemsByProject(id: number) {
-    return await this.projectRepository
-      .createQueryBuilder('project')
-      .leftJoinAndSelect("project.items", "items")
-      .where("project.id = :id", {id: id})
+    return await this.epochRepository
+      .createQueryBuilder('epoch')
+      .leftJoinAndSelect("epoch.items", "items")
+      .where("epoch.id = :id", {id: id})
       .getMany();
   }
 
   async getItemsByProjectId(pageOptionsDto: PageOptionsDto, id: number) {
     const queryBuilder = this.itemRepository.createQueryBuilder("items");
     queryBuilder
-      .where("items.projectId = :id", {id: id})
+      .where("items.epochId = :id", {id: id})
       .orderBy("items.id", pageOptionsDto.order)
       .skip(pageOptionsDto.skip)
       .take(pageOptionsDto.take);
@@ -44,9 +50,9 @@ export class ItemsService {
   }
 
   async createItemByProjectId(id: number, createItemDto: CreateItemDto) {
-    const project = await this.projectRepository.findOneById(id);
-    if(project == null) throw new HttpException("no such project", HttpStatus.BAD_REQUEST);
-    console.log(project);
+    const epoch: EpochEntity = await this.epochRepository.findOneById(id);
+    if(epoch == null) throw new HttpException("no such project", HttpStatus.BAD_REQUEST);
+    console.log(epoch);
     //return await this.projectRepository
     //  .createQueryBuilder('project')
     //  .leftJoinAndSelect("project.items", "items")
@@ -61,9 +67,9 @@ export class ItemsService {
       '"project"."id" = ' + `${id}`)
 
     if (items[0].id != null) {
-      project.addItems(items);
+      epoch.addItems(items);
     }
-    project.addItem(await this.itemRepository.save(createItemDto))
-    return await this.projectRepository.save(project);
+    epoch.addItem(await this.itemRepository.save(createItemDto))
+    return await this.itemRepository.save(epoch);
   }
 }

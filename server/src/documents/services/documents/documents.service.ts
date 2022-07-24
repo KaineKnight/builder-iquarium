@@ -17,12 +17,15 @@ export class DocumentsService {
   }
 
   async getAllDocuments() {
-
-  }
+    return await this.documentsRepository
+      .createQueryBuilder('docs')
+      .getMany();  }
 
   async getDocumentById(id: number) {
-
-  }
+    return await this.documentsRepository
+      .createQueryBuilder('docs')
+      .where("docs.id = :id", {id: id})
+      .getOne();  }
 
 
   /*async uploadFile(file: File) {
