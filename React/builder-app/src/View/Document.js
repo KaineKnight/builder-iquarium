@@ -9,7 +9,7 @@ function Document(props) {
     const [appState, setAppState] = useState(null);
 
     const NewDocument = async () => { 
-        await axios.get("http://10.1.1.40:3000/documents/documents").then((resp) => {
+        await axios.get("http://10.1.1.40:3000/documents").then((resp) => {
             setAppState(resp.data)
             console.log(resp.data)
      });
